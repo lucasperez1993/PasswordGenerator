@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
     <title>Password Generator</title>
 </head>
 <body>
-    <div>
+    <br><br>
+    <div class="form col-6">
         <form action="{% url 'password' %}">
-            <h1>Password Generator</h1>
+            <div class="container">
+                <h1 class="title">Password Generator</h1>
+            </div>
 
-            <label for="length">Selecciona el tamaño de la contraseña:</label>
-            <select name="length" id="length">
+            <label for="length" class="form-label mt-4">Selecciona el tamaño de la contraseña:</label>
+            <select name="length" id="length" class="form-select ">
                 <option value="6">6 characters</option>
                 <option value="7">7 characters</option>
                 <option value="8">8 characters</option>
@@ -21,18 +25,35 @@
                 <option value="11">11 characters</option>
                 <option value="12">12 characters</option>
             </select>
-
+            <br>
             <label for="uppercase">Uppercase</label>
             <input type="checkbox" name="uppercase" id="uppercase">
-
+            <br>
             <label for="special">Caracteres especiales</label>
             <input type="checkbox" name="special" id="special">
-
+            <br>
             <label for="numbers">Números</label>
             <input type="checkbox" name="numbers" id="numbers">
-
-            <button>Generar Contraseña</button>
+            <br><br>
+            <button class="btn btn-primary">Generar Contraseña</button>
         </form>
+        <br><br>
     </div>
+    <style>
+        body {
+            background: rgb(2,0,36);
+            background: linear-gradient(157deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 13%, rgba(0,212,255,1) 100%);
+        }
+        .title{
+            color: aliceblue;
+        }
+        .form{
+            display: flex;
+            align-content: center;
+            color: aliceblue;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+    </style>
 </body>
 </html>
